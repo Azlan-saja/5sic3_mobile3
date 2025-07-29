@@ -29,6 +29,14 @@ class DatabaseHelper {
   ) 
   ''';
 
+  final String insertUserTable = '''
+  INSERT INTO users ( 
+    userId, 
+    userName, 
+    userPassword
+  ) VALUES (1, "admin", "password")
+  ''';
+
   // Initialize the database
   Future<Database> initDB() async {
     final databasePath = await getDatabasesPath();
@@ -40,6 +48,7 @@ class DatabaseHelper {
       onCreate: (db, version) async {
         await db.execute(createUserTable);
         await db.execute(createNoteTable);
+        await db.execute(insertUserTable);
       },
     );
   }
