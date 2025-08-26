@@ -1,3 +1,4 @@
+import 'package:aplikasi_5sic3_mobile3/views/home/create_view.dart';
 import 'package:aplikasi_5sic3_mobile3/views/login_view.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -18,7 +20,8 @@ class MainApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: LoginView(),
+      // home: LoginView(),
+      home: CreateView(),
     );
   }
 }

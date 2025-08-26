@@ -1,6 +1,6 @@
 import 'package:aplikasi_5sic3_mobile3/database/database_helper.dart';
 import 'package:aplikasi_5sic3_mobile3/models/user_model.dart';
-import 'package:aplikasi_5sic3_mobile3/views/home_view.dart';
+import 'package:aplikasi_5sic3_mobile3/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginController {
