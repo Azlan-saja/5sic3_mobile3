@@ -8,6 +8,13 @@ class NoteController {
   final formKey = GlobalKey<FormState>();
   final db = DatabaseHelper();
 
+  late Future<List<NoteModel>> notes;
+
+  Future<List<NoteModel>> readData() {
+    notes = db.readData();
+    return notes;
+  }
+
   cekValidasi(String? value, {required String label}) {
     if (value!.isEmpty) {
       return '$label wajib diisi';
@@ -34,7 +41,7 @@ class NoteController {
         // berhasil
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text(' '),
+            content: const Text('Berhasil Simpan Data.'),
             backgroundColor: Colors.teal[400],
             behavior: SnackBarBehavior.floating,
           ),
